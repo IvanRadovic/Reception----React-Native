@@ -2,6 +2,7 @@ import { View, Text, StyleSheet } from "react-native";
 
 import GlobalInputs from "../UI/GlobalInputs";
 import Colors from "../../Constants/Colors";
+import CustomButton from "../UI/CustomButton";
 
 const UniqueScreen = () => {
     return (
@@ -14,6 +15,7 @@ const UniqueScreen = () => {
                 <GlobalInputs placeholder='Name' />
                 <GlobalInputs placeholder='Email'/>
                 <GlobalInputs placeholder='Phone'/>
+                <CustomButton title='Next' />
             </View>
         </View>
     );

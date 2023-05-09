@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 /* --- Components --- */
 import PrivateApartmans from './Screens/PrivateApartmans';
+import Login from './Screens/Login';
 import SmallHotels from './Screens/SmallHotels';
 import UserSelect from './Screens/UserSelect';
 import BackButton from './Components/UI/BackButton';
@@ -20,6 +21,18 @@ export default function App() {
         headerStyle:{backgroundColor:Colors.backgroundColor100},
         headerTitleStyle: {color:Colors.fontColor100},
       }}>
+        <Stack.Screen 
+          name="Login" 
+          component={Login}
+          options={({ navigation }) => ({
+            title:'Log in',
+            headerShown:false,
+            headerBackTitle: '',
+            headerLeft: () => (
+              <BackButton iconName="close" onPress={() => navigation.navigate("UserSelect")} />
+            ),
+          })}  
+        />
         <Stack.Screen 
           options={{ headerShown:false}} 
           name="UserSelect" 
