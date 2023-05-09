@@ -5,10 +5,7 @@ import { useNavigation } from "@react-navigation/core";
 import DropdownComponent from "../Components/UI/Dropdown";
 import UserSelectButton from "../Components/UI/UserSelecetButton";
 
-const UserSelect = () => {
-
-    const navigation = useNavigation();
-
+const UserSelect = ({ navigation}) => {
 
     return ( 
         <View style={styles.componentContainer}>
@@ -23,8 +20,8 @@ const UserSelect = () => {
                     </Text>
                 </View>
                 <View>
-                    <UserSelectButton title='Small hotel' icon='bed-outline' text='Hotel org. registered by law' onPress={() => navigation.navigate('ScreenOne')}  />
-                    <UserSelectButton  title='Private Home' icon='home-outline' text='Owners renting their property'/>
+                    <UserSelectButton title='Small hotel' icon='bed-outline' text='Hotel org. registered by law' onPress={() => navigation.navigate('SmallHotels')}  />
+                    <UserSelectButton  title='Private Home' icon='home-outline' text='Owners renting their property' onPress={() => navigation.navigate('PrivateApartments')} />
                 </View>
             </View>
             
