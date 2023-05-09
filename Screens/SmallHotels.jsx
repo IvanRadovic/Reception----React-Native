@@ -1,10 +1,9 @@
-import { View, Text } from "react-native";
+import UniqueScreen from "../Components/ManageScreens/UniqueScreen";
+
 
 const SmallHotels = () => {
     return (  
-        <View>
-            <Text>Ovo je small hotel</Text>
-        </View>
+        <UniqueScreen />        
     );
 }
  

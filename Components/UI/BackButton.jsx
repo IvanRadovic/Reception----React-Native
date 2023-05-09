@@ -1,10 +1,12 @@
 import { Pressable, StyleSheet } from "react-native";
 import  { Ionicons }  from "@expo/vector-icons";
 
+import Colors from "../../Constants/Colors";
+
 const BackButton = ({iconName, onPress}) => {
     return ( 
         <Pressable onPress={onPress}>
-            <Ionicons style={styles.iconContainer} name={iconName} size={26} />
+            <Ionicons style={styles.iconContainer} color={Colors.fontColor100} name={iconName} size={26} />
         </Pressable>
      );
 }

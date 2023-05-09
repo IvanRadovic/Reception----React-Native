@@ -1,9 +1,10 @@
 export default Colors = {
 
     /* --- Background Color --- */
-    stackColor:'#b5ddff',
+    backgroundColor100:'#5F8C9A', // -- shape of blue
+    primmaryColor200:'#F1EEEA', // -- dirty white 2
 
-    /* -- userSelectButon -- */
-    userSelectButton: '#c3d6e3',
-    userSelecetButtonPressed: '#3d99d9'
+    /* -- FontColor */
+    fontColor100:'#FCF7ED', // -- dirty white 1
+    fontColor200:'#A5A8A9' // -- gray
 }

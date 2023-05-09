@@ -1,11 +1,8 @@
-import { View, Text } from "react-native";
+import UniqueScreen from "../Components/ManageScreens/UniqueScreen";
 
 const PrivateApartmans = () => {
     return (  
-        <View>
-            <Text>Ovo je PrivateApartmans</Text>
-        </View>
-    
+        <UniqueScreen />
      );
 }
  

@@ -15,9 +15,10 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer style={styles.container}>
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
       <Stack.Navigator screenOptions={{
-        headerStyle:{backgroundColor:Colors.stackColor}
+        headerStyle:{backgroundColor:Colors.backgroundColor100},
+        headerTitleStyle: {color:Colors.fontColor100},
       }}>
         <Stack.Screen 
           options={{ headerShown:false}} 
@@ -39,7 +40,7 @@ export default function App() {
           name="PrivateApartments" 
           component={PrivateApartmans}
           options={({ navigation }) => ({
-            title:'Small hotel',
+            title:'Private homeowner',
             headerBackTitle: '',
             headerLeft: () => (
               <BackButton iconName="close" onPress={() => navigation.navigate("UserSelect")} />
@@ -54,6 +55,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:Colors.primmaryColor200,
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
