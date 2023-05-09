@@ -8,7 +8,11 @@ import  { Ionicons }  from "@expo/vector-icons"
 const UserSelectButton = ({title, icon, text, onPress}) => {
 
     return (
-        <Pressable onPress={onPress} style={styles.container}>
+        <Pressable 
+            onPress={onPress} 
+            style={[({pressed}) => pressed && styles.pressContainer,styles.container]} 
+            android_ripple={null}
+        >
             <View style={styles.allElements}>
                 <View style={styles.iconText}>
                     <Ionicons name={icon} size={26} />
@@ -57,5 +61,9 @@ const styles = StyleSheet.create({
     },
     textDesc:{
         fontSize:13
+    },
+    pressContainer:{
+        backgroundColor: Colors.userSelecetButtonPressed,
+        opacity:0.3
     }
 });

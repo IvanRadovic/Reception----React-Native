@@ -21,7 +21,7 @@ const UserSelect = ({ navigation}) => {
                 </View>
                 <View>
                     <UserSelectButton title='Small hotel' icon='bed-outline' text='Hotel org. registered by law' onPress={() => navigation.navigate('SmallHotels')}  />
-                    <UserSelectButton  title='Private Home' icon='home-outline' text='Owners renting their property' onPress={() => navigation.navigate('PrivateApartments')} />
+                    <UserSelectButton  title='Private Homewner' icon='home-outline' text='Owners renting their property' onPress={() => navigation.navigate('PrivateApartments')} />
                 </View>
             </View>
             
