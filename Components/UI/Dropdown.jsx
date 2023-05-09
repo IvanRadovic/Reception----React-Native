@@ -65,7 +65,7 @@ export default DropdownComponent;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
     padding: 16,
     width:'50%'
   },
