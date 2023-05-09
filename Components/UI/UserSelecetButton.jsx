@@ -1,12 +1,11 @@
 import { Pressable,View,Text, StyleSheet } from "react-native";
+
+
+/* --- Components --- */
 import Colors from "../../Constants/Colors";
 import  { Ionicons }  from "@expo/vector-icons"
 
 const UserSelectButton = ({title, icon, text, onPress}) => {
-
-    const handlePress = () => {
-    }
-
 
     return (
         <Pressable onPress={onPress} style={styles.container}>

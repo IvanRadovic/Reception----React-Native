@@ -1,10 +1,15 @@
 import { View, Text, StyleSheet } from "react-native";
+import { useNavigation } from "@react-navigation/core";
 
 /* --- Components --- */
 import DropdownComponent from "../Components/UI/Dropdown";
 import UserSelectButton from "../Components/UI/UserSelecetButton";
 
 const UserSelect = () => {
+
+    const navigation = useNavigation();
+
+
     return ( 
         <View style={styles.componentContainer}>
             <View style={styles.containerForAllElements}>
@@ -18,7 +23,7 @@ const UserSelect = () => {
                     </Text>
                 </View>
                 <View>
-                    <UserSelectButton title='Small hotel' icon='bed-outline' text='Hotel org. registered by law'  />
+                    <UserSelectButton title='Small hotel' icon='bed-outline' text='Hotel org. registered by law' onPress={() => navigation.navigate('ScreenOne')}  />
                     <UserSelectButton  title='Private Home' icon='home-outline' text='Owners renting their property'/>
                 </View>
             </View>

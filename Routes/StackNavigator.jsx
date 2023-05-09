@@ -1,10 +1,15 @@
-import { View, Text } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
+
+import PropertyDetails from "../Screens/PropertyDetails";
+
+const Stack = createStackNavigator();
+
 
 const StackNavigator = () => {
     return (  
-        <View>
-            <Text> Ovo je stack navigator</Text>
-        </View>
+        <StackNavigator>
+            <Stack.Screen name="ScreenOne" component={PropertyDetails} />
+        </StackNavigator>
     );
 }
  
