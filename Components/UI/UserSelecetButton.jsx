@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         marginVertical:10,
         borderWidth:2,
         borderRadius:10,
-        borderColor:Colors.userSelectButton
+        borderColor:Colors.backgroundColor100
     },
     allElements:{
         height:80,

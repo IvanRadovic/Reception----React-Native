@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { TextInput } from "react-native";
+import { TextInput, StyleSheet } from "react-native";
 
-const GlobalInputs = (placeholder) => {
+const GlobalInputs = ({placeholder}) => {
 
     const [text, setText] = useState('');
 
@@ -9,7 +9,7 @@ const GlobalInputs = (placeholder) => {
         <TextInput
             placeholder={placeholder}
             style={styles.inputs}
-            placeholderTextColor=''
+            placeholderTextColor='#5F8C9A'
             onChangeText={(value) => setText(value)}
             value={text}
         />
@@ -23,10 +23,10 @@ const styles = StyleSheet.create({
         padding: 10,
         marginVertical: 10,
         borderWidth: 1,
-        borderColor: '#ccc',
-        borderRadius: 5,
-        color: '#000',
-        fontSize: 16,
+        borderColor: '#5F8C9A',
+        borderRadius: 8,
+        color: 'black',
+        fontSize: 15,
         marginVertical:10
     }
 });
