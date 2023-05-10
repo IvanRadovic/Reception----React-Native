@@ -1,18 +1,20 @@
 import { useState } from "react";
-import { TextInput, StyleSheet } from "react-native";
+import { View, TextInput, StyleSheet } from "react-native";
 
-const GlobalInputs = ({placeholder}) => {
+const GlobalInputs = ({value, name, placeholder, onChange, styleInput}) => {
 
-    const [text, setText] = useState('');
 
-    return ( 
-        <TextInput
+    return (
+        <View style={styleInput}>
+            <TextInput
+            name={name}
             placeholder={placeholder}
             style={styles.inputs}
             placeholderTextColor='#5F8C9A'
-            onChangeText={(value) => setText(value)}
-            value={text}
+            onChangeText={onChange}
+            value=''
         />
+        </View>
      );
 }
  
