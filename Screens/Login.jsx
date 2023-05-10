@@ -6,7 +6,7 @@ import CustomButton from "../Components/UI/CustomButton";
 import { loginInputs } from "../Constants/ConstantInputs";
 import { useState } from "react";
 
-const Login = () => {
+const Login = ({navigation}) => {
 
     const [inputValues, setInputValue] = useState({
         email:'',
@@ -48,7 +48,7 @@ const Login = () => {
                     </View>
                 </View>
                 {/* -- Button --- */}
-                <CustomButton title='Log in' />
+                <CustomButton title='Log in' onPress={() => navigation.navigate('UserSelect')} />
             </View>
         </View>
      );
