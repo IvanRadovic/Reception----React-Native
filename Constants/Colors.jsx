@@ -1,7 +1,7 @@
 export default Colors = {
 
     /* --- Background Color --- */
-    backgroundColor100:'#5F8C9A', // -- shape of blue
+    backgroundColor100:'#aeaeae', // -- shape of blue
     primmaryColor200:'#B3B3B3', // -- dirty white 2
     backgroundColor300:'#ececec', // -- gray 1
 

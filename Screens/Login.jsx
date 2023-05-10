@@ -43,7 +43,7 @@ const Login = () => {
                             ))
                         }
                         <Pressable>
-                            <Text>Forgot Password?</Text>
+                            <Text style={styles.textPass}>Forgot Password?</Text>
                         </Pressable>
                     </View>
                 </View>
@@ -99,6 +99,9 @@ const styles = StyleSheet.create({
     },
     inputsContainer:{
         gap:10
+    },
+    textPass:{
+        color:'darkblue'
     }
     
 });
