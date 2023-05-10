@@ -1,26 +1,50 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 
 import GlobalInputs from "../Components/UI/GlobalInputs";
 import Colors from "../Constants/Colors";
 import CustomButton from "../Components/UI/CustomButton";
+import { loginInputs } from "../Constants/ConstantInputs";
+import { useState } from "react";
 
 const Login = () => {
+
+    const [inputValues, setInputValue] = useState({
+        email:'',
+        password:''
+    });
+
+    const handleInputChange = ( key, value) => {
+        setInputValue({ ...inputValues, [key]:value });
+    }
+
     return ( 
         <View style={styles.containerLogin}>
+            {/* --- Image -- */}
             <View style={styles.containerLogo}>
                 <Image source={require('../assets/Logo/Hotel.png')} />
             </View>
-            <View style={styles.containerForm}>
+            <View style={styles.containerElements}>
                 {/* -- Text and inputs -- */}
                 <View>
-                    <View>
-                        <Text>Welcome</Text>
-                        <Text>Manage your properites and see all your reservations in one place</Text>
+                    <View style={styles.textContainer}>
+                        <Text style={styles.headerText}>Welcome</Text>
+                        <Text style={styles.textDecsc}>Manage your properites and see all your reservations in one place</Text>
                     </View>
-                    <View>
-                        <GlobalInputs placeholder='Email' />
-                        <GlobalInputs placeholder='Password'/>
-                        <Text>Forgot Password?</Text>
+                    {/* --- Inputs -- */}
+                    <View style={styles.inputsContainer}>
+                        {
+                            loginInputs.map((input, index) => (
+                                <GlobalInputs
+                                    key={index}
+                                    placeholder={input.placeholder}
+                                    value={inputValues[input.stateKey]}
+                                    onChange={(text) => handleInputChange(input.stateKey, text)}
+                                />
+                            ))
+                        }
+                        <Pressable>
+                            <Text>Forgot Password?</Text>
+                        </Pressable>
                     </View>
                 </View>
                 {/* -- Button --- */}
@@ -46,14 +70,35 @@ const styles = StyleSheet.create({
         marginTop:20,
         padding:10,
     },
-    containerForm:{
+    containerElements:{
         flex:3,
-        padding:10,
+        height:'100%',
+        justifyContent:'space-around',
+        paddingHorizontal:20,
         borderTopColor:'white',
         borderTopWidth:2,
         backgroundColor:'white',
         borderTopRightRadius:'50%',
         borderTopLeftRadius:'50%',
+    },
+    textContainer:{
+        justifyContent:'center',
+        alignItems:'center',
+        gap:15,
+        marginBottom:18
+    },
+    headerText:{
+        fontSize:22,
+        fontWeight:'bold'
+    },
+    textDecsc:{
+        fontSize:16,
+        lineHeight:24,
+        textAlign:'center',
+        opacity:0.5
+    },
+    inputsContainer:{
+        gap:10
     }
     
 });
