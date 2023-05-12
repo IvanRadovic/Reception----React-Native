@@ -45,6 +45,7 @@ const Login = ({navigation}) => {
         setShowEmailForm(false);
     };
 
+    /* ---Input values -- */
     const handleInputChange = ( key, value) => {
         setInputValue({ ...inputValues, [key]:value });
     }

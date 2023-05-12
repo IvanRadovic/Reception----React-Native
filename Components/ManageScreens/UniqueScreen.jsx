@@ -1,46 +1,19 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { useState } from "react";
 
-import GlobalInputs from "../UI/GlobalInputs";
-import Colors from "../../Constants/Colors";
+import GeneralInformation from "./GeneralInformations/GeneralInformation";
+import HotelAddress from "./GeneralInformations/HotelAdress";
+import GeneralOther from "./GeneralInformations/Other";
 import CustomButton from "../UI/CustomButton";
-import { generalInputs } from "../../Constants/ConstantInputs";
+
 
 const UniqueScreen = () => {
-
-    const [generalValues, setGeneralValues] = useState({
-        hotelName:'',
-        email:'',
-        phone:'',
-        fax:'',
-    })
-
-    const handleValues = (key, value) => {
-      setGeneralValues({ ...generalValues, [key]:value })
-    }
-
     return (
         <View style={styles.uniqueContainer}>
-            <ScrollView>
-                <View style={styles.textContainer}>
-                    <Text style={styles.textHeader}>General Information</Text>
-                    <Text style={styles.textDesc}> Please eneter your general and contact information below</Text>
-                </View>
-                <View style={styles.inputsContainer}>
-                    {
-                        generalInputs.map((input, index) => (
-                            <GlobalInputs
-                            key={index}
-                            value={generalValues[input.stateKey]}
-                            placeholder={input.placeholder}
-                            onChange={(text) => handleValues(input.stateKey, text)}
-                            />
-                        ))
-                    }
-                    <View>
-                        <Text style={styles.textAddress}>Hotel Address</Text>
-                    </View>
-                </View>
+            <ScrollView style={styles.scrollView}>
+                <GeneralInformation />
+                <HotelAddress />
+                <GeneralOther />
             </ScrollView>
             <CustomButton title='Next' />
         </View>
@@ -55,26 +28,7 @@ const styles = StyleSheet.create({
         padding: 10,
         paddingBottom:30
     },
-    textContainer:{
-        width:'100%',width:'100%',
-        marginVertical:15,
-        gap:5,
-        justifyContent:'flex-start',
-        alignItems:'flex-start'
-    },
-    textHeader:{
-        fontSize:22,
-        fontWeight:500
-    },
-    textDesc:{
-        fontSize:13,
-        color:Colors.fontColor200
-    },
-    inputsContainer:{
-        gap:10
-    },
-    textAddress:{
-        fontSize:20,
-        fontWeight:400
+    scrollView:{
+        marginBottom:28
     }
 });
