@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, Pressable } from "react-native";
+import { View, Text, Image, StyleSheet, Pressable, ImageBackground } from "react-native";
 import { useState } from "react";
 import  { Ionicons }  from "@expo/vector-icons";
 
@@ -51,83 +51,92 @@ const Login = ({navigation}) => {
     }
 
     return ( 
-        <View style={styles.containerLogin}>
-            {/* --- Image -- */}
-            <View style={styles.containerLogo}>
-                <Image source={require('../assets/Logo/Hotel.png')} />
-            </View>
-            <View style={styles.containerElements}>
-                {/* ---- LOGIN FORM REGULAR --- */}
-                {/* -- Text and inputs -- */}
-                {showLoginForm && 
-                    <View>
-                        <View style={styles.textContainer}>
-                            <Text style={styles.headerText}>Welcome</Text>
-                            <Text style={styles.textDecsc}>Manage your properites and see all your reservations in one place</Text>
+        <View style={styles.root}>
+            <ImageBackground 
+                    source={require('../assets/BackgrImgs/BG3.png')} 
+                    style={styles.imageBackground}
+                >
+                <View style={styles.containerLogin}>
+                    {/* --- Image -- */}
+                
+                        <View style={styles.containerLogo}>
+                            <Image source={require('../assets/Logo/Hotel.png')} />
                         </View>
-                        {/* --- Inputs -- */}
-                        <View style={styles.inputsContainer}>
-                            {
-                                loginInputs.map((input, index) => (
-                                    <GlobalInputs
-                                        key={index}
-                                        placeholder={input.placeholder}
-                                        value={inputValues[input.stateKey]}
-                                        onChange={(text) => handleInputChange(input.stateKey, text)}
-                                    />
-                                ))
-                            }
-                            <Pressable onPress={handleForgotPassword}>
-                                <Text style={styles.textPass}>Forgot Password?</Text>
-                            </Pressable>
-                        </View>
-                    </View>}
+                    
+                    <View style={styles.containerElements}>
+                        {/* ---- LOGIN FORM REGULAR --- */}
+                        {/* -- Text and inputs -- */}
+                        {showLoginForm && 
+                            <View>
+                                <View style={styles.textContainer}>
+                                    <Text style={styles.headerText}>Welcome</Text>
+                                    <Text style={styles.textDecsc}>Manage your properites and see all your reservations in one place</Text>
+                                </View>
+                                {/* --- Inputs -- */}
+                                <View style={styles.inputsContainer}>
+                                    {
+                                        loginInputs.map((input, index) => (
+                                            <GlobalInputs
+                                                key={index}
+                                                placeholder={input.placeholder}
+                                                value={inputValues[input.stateKey]}
+                                                onChange={(text) => handleInputChange(input.stateKey, text)}
+                                            />
+                                        ))
+                                    }
+                                    <Pressable onPress={handleForgotPassword}>
+                                        <Text style={styles.textPass}>Forgot Password?</Text>
+                                    </Pressable>
+                                </View>
+                            </View>}
 
-                    {/* --- Showing EMAIL for submit --- */}
-                {showEmailForm && 
-                    <View>
-                        <Pressable onPress={handleGoBack}>
-                                <Ionicons name="arrow-back-outline" size={25} />
-                        </Pressable>
-                        <View style={styles.textContainer}>
-                            <Text style={styles.headerText}>Forgot password</Text>
-                            <Text style={styles.textDecsc}>Please enter your email and we will send you instructions for resetting your password</Text>
-                        </View>
-                        <GlobalInputs
-                            value={email}
-                            onChangeText={text => setEmail(text)}
-                            placeholder="Email"
-                        />
-                    </View>}
-                {showResetPassword && 
-                    <View>
-                        <View style={styles.textContainer}>
-                            <Text style={styles.headerText}>New password</Text>
-                            <Text style={styles.textDecsc}>Enter your password below</Text>
-                        </View>
-                        <GlobalInputs
-                            value={email}
-                            onChangeText={text => setEmail(text)}
-                            placeholder="New password"
-                        />
-                        <GlobalInputs
-                            value={email}
-                            onChangeText={text => setEmail(text)}
-                            placeholder="Confirm password"
-                        />
+                            {/* --- Showing EMAIL for submit --- */}
+                        {showEmailForm && 
+                            <View>
+                                <Pressable onPress={handleGoBack}>
+                                        <Ionicons name="arrow-back-outline" size={25} />
+                                </Pressable>
+                                <View style={styles.textContainer}>
+                                    <Text style={styles.headerText}>Forgot password</Text>
+                                    <Text style={styles.textDecsc}>Please enter your email and we will send you instructions for resetting your password</Text>
+                                </View>
+                                <GlobalInputs
+                                    value={email}
+                                    onChangeText={text => setEmail(text)}
+                                    placeholder="Email"
+                                />
+                            </View>}
+                        {showResetPassword && 
+                            <View>
+                                <View style={styles.textContainer}>
+                                    <Text style={styles.headerText}>New password</Text>
+                                    <Text style={styles.textDecsc}>Enter your password below</Text>
+                                </View>
+                                <GlobalInputs
+                                    value={email}
+                                    onChangeText={text => setEmail(text)}
+                                    placeholder="New password"
+                                />
+                                <GlobalInputs
+                                    value={email}
+                                    onChangeText={text => setEmail(text)}
+                                    placeholder="Confirm password"
+                                />
+                            </View>
+                        }
+                        {/* -- Button --- */}
+                        { 
+                        showLoginForm && <CustomButton title='Log in' onPress={() => navigation.navigate('UserSelect')} />
+                        }
+                        { 
+                        showEmailForm && <CustomButton title='Send' onPress={handleSubmitEmail} />
+                        }
+                        { 
+                        showResetPassword && <CustomButton title='Submit' onPress={handleSubmitNewPassword} />
+                        }
                     </View>
-                }
-                {/* -- Button --- */}
-                { 
-                showLoginForm && <CustomButton title='Log in' onPress={() => navigation.navigate('UserSelect')} />
-                }
-                { 
-                showEmailForm && <CustomButton title='Send' onPress={handleSubmitEmail} />
-                }
-                { 
-                showResetPassword && <CustomButton title='Submit' onPress={handleSubmitNewPassword} />
-                }
-            </View>
+                </View>
+            </ImageBackground>
         </View>
      );
 }
@@ -135,21 +144,30 @@ const Login = ({navigation}) => {
 export default Login;
 
 const styles = StyleSheet.create({
+    root:{
+        flex:1,
+        backgroundColor:'transparent'
+
+    },
+    imageBackground: {
+        flex: 1,
+        resizeMode: 'cover',
+      },
     containerLogin:{
         flex:1,
-        backgroundColor:Colors.backgroundColor300,
     },
     containerLogo:{
         flex:1,
         height:'100%',
         justifyContent:'center',
         alignItems:'center',
-        backgroundColor:Colors.backgroundColor300,
         marginTop:20,
         padding:10,
+        borderBottomWidth:0
     },
     containerElements:{
         flex:3,
+        width:'100%',
         height:'100%',
         justifyContent:'space-around',
         paddingHorizontal:20,
@@ -180,6 +198,6 @@ const styles = StyleSheet.create({
     },
     textPass:{
         color:'darkblue'
-    }
+    },
     
 });
