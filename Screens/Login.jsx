@@ -53,7 +53,7 @@ const Login = ({navigation}) => {
     return ( 
         <View style={styles.root}>
             <ImageBackground 
-                    source={require('../assets/BackgrImgs/BG3.png')} 
+                    source={require('../assets/BackgrImgs/BG3.webp')} 
                     style={styles.imageBackground}
                 >
                 <View style={styles.containerLogin}>

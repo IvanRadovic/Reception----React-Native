@@ -6,7 +6,7 @@ const PrivateApartmans = () => {
     return ( 
         <View style={styles.root}>
             <ImageBackground 
-                source={require('../assets/BackgrImgs/BG2.png')}
+                source={require('../assets/BackgrImgs/BG4.webp')}
                 style={styles.imageBackground}
             >
                 <UniqueScreen />

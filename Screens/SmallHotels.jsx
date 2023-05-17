@@ -5,7 +5,7 @@ const SmallHotels = () => {
     return (  
         <View style={styles.root}>
             <ImageBackground 
-                source={require('../assets/BackgrImgs/BG2.png')}
+                source={require('../assets/BackgrImgs/BG4.webp')}
                 style={styles.imageBackground}
             >
             <UniqueScreen />
@@ -23,7 +23,5 @@ const styles = StyleSheet.create({
     imageBackground: {
         flex: 1,
         resizeMode: 'cover',
-        // justifyContent: 'center', 
-        // alignItems: 'center', 
       },
 });

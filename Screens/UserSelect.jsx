@@ -12,7 +12,7 @@ const UserSelect = ({ navigation}) => {
         <>
         <StatusBar style='dark'/>
         <ImageBackground 
-                source={require('../assets/BackgrImgs/BG3.png')}
+                source={require('../assets/BackgrImgs/BG3.webp')}
                 style={styles.imageBackground}
             >
         <View style={styles.componentContainer}>
