@@ -15,7 +15,7 @@ const UniqueScreen = () => {
                 <HotelAddress />
                 <GeneralOther />
             </ScrollView>
-            <CustomButton title='Next' />
+            <CustomButton title='Next' style />
         </View>
     );
 }
@@ -25,10 +25,12 @@ export default UniqueScreen;
 const styles = StyleSheet.create({
     uniqueContainer:{
         flex:1,
-        padding: 10,
-        paddingBottom:30
+        width:'100%',
+        justifyContent:'center',
+        paddingTop:25,
+        paddingHorizontal:10
     },
     scrollView:{
-        marginBottom:28
-    }
+        marginTop:55
+    },
 });
