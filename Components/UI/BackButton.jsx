@@ -6,7 +6,7 @@ import Colors from "../../Constants/Colors";
 const BackButton = ({iconName, onPress}) => {
     return ( 
         <Pressable onPress={onPress}>
-            <Ionicons style={styles.iconContainer} color={Colors.fontColor100} name={iconName} size={26} />
+            <Ionicons style={styles.iconContainer} color={Colors.backButtonColor} name={iconName} size={26} />
         </Pressable>
      );
 }

@@ -10,5 +10,6 @@ export default Colors = {
     fontColor200:'#A5A8A9', // -- gray 2
 
     /* --- CustomButton -- */
-    customButtonColor:'#224e69'
+    customButtonColor:'#224e69',
+    backButtonColor:'#5F8C9A',
 }

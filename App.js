@@ -26,7 +26,7 @@ export default function App() {
           <Stack.Navigator screenOptions={{
             headerStyle:{backgroundColor:'transparent'},
             headerTransparent: true,
-            headerTitleStyle: {color:'black'},
+            headerTitleStyle: {color:Colors.backButtonColor},
           }}>
             <Stack.Screen 
               name="Login" 
