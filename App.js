@@ -11,6 +11,7 @@ import SmallHotels from './Screens/SmallHotels';
 import UserSelect from './Screens/UserSelect';
 import BackButton from './Components/UI/BackButton';
 import Colors from './Constants/Colors';
+import Details from './Screens/Details';
 
 const Stack = createStackNavigator();
 
@@ -61,6 +62,17 @@ export default function App() {
               component={PrivateApartmans}
               options={({ navigation }) => ({
                 title:'Private homeowner',
+                headerBackTitle: '',
+                headerLeft: () => (
+                  <BackButton iconName="close" onPress={() => navigation.navigate("UserSelect")} />
+                ),
+              })}  
+            />
+            <Stack.Screen 
+              name="Details" 
+              component={Details}
+              options={({ navigation }) => ({
+                title:'All apartmans',
                 headerBackTitle: '',
                 headerLeft: () => (
                   <BackButton iconName="close" onPress={() => navigation.navigate("UserSelect")} />
