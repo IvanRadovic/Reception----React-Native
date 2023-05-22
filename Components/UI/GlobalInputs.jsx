@@ -12,7 +12,7 @@ const GlobalInputs = ({value, name, placeholder, onChange, styleInput, style}) =
             style={styles.inputs}
             placeholderTextColor='#5F8C9A'
             onChangeText={onChange}
-            value=''
+            value={value}
         />
         </View>
      );

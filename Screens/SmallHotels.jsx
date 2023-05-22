@@ -1,6 +1,5 @@
 import { ImageBackground, View, StyleSheet } from "react-native";
 import UniqueScreen from "../Components/ManageScreens/UniqueScreen";
-
 const SmallHotels = () => {
     return (  
         <View style={styles.root}>

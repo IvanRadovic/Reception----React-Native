@@ -1,12 +1,19 @@
 import { View, Text, StyleSheet } from "react-native";
-import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 /* -- Components --- */
 import GlobalInputs from "../../UI/GlobalInputs";
 import Colors from "../../../Constants/Colors";
+import CustomButton from "../../UI/CustomButton"
 import { generalInputs } from "../../../Constants/ConstantInputs";
 
 const GeneralInformation = () => {
 
+    const navigation = useNavigation();
+
+    const [info, setInfo] = useState(null);
     const [generalValues, setGeneralValues] = useState({
         hotelName:'',
         email:'',
@@ -17,6 +24,27 @@ const GeneralInformation = () => {
     const handleValues = (key, value) => {
       setGeneralValues({ ...generalValues, [key]:value })
     }
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+                const data = response.data;
+                setInfo(data);
+          } catch (error) {
+            console.log(error);
+          }
+        }
+
+        fetchData();
+      },[]);
+
+    /* --- Handle submit --- */
+    const handleSubmit = () => {
+        navigation.navigate('Details', {info});
+    }
+
+    
     return ( 
         <View style={styles.uniqueContainer}>
                 <View style={styles.textContainer}>
@@ -35,6 +63,7 @@ const GeneralInformation = () => {
                         ))
                     }
                 </View>
+                <CustomButton title="Your apartmans" onPress={handleSubmit} />
         </View>
         
      );
