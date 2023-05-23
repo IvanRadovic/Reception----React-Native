@@ -72,10 +72,21 @@ export default function App() {
               name="Details" 
               component={Details}
               options={({ navigation }) => ({
-                title:'All apartmans',
+                title:'All rooms',
                 headerBackTitle: '',
                 headerLeft: () => (
-                  <BackButton iconName="close" onPress={() => navigation.navigate("UserSelect")} />
+                  <BackButton iconName="close" onPress={() => navigation.navigate("SmallHotels")} />
+                ),
+              })}  
+            />
+            <Stack.Screen 
+              name="Calendar" 
+              component={Details}
+              options={({ navigation }) => ({
+                title:'Check calendar',
+                headerBackTitle: '',
+                headerLeft: () => (
+                  <BackButton iconName="close" onPress={() => navigation.navigate("SmallHotels")} />
                 ),
               })}  
             />

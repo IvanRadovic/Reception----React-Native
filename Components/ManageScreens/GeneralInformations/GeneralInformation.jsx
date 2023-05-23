@@ -28,7 +28,7 @@ const GeneralInformation = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+                const response = await axios.get('http://130.61.83.69/api/entities/roomtype/list');
                 const data = response.data;
                 setInfo(data);
           } catch (error) {
@@ -41,9 +41,8 @@ const GeneralInformation = () => {
 
     /* --- Handle submit --- */
     const handleSubmit = () => {
-        navigation.navigate('Details', {info});
+        navigation.navigate('Details', );
     }
-
     
     return ( 
         <View style={styles.uniqueContainer}>
@@ -63,7 +62,10 @@ const GeneralInformation = () => {
                         ))
                     }
                 </View>
-                <CustomButton title="Your apartmans" onPress={handleSubmit} />
+                <View style={styles.buttonContainer}>
+                <CustomButton title="Check your rooms" onPress={handleSubmit} style={styles.button} />
+                </View>
+               
         </View>
         
      );
@@ -93,5 +95,15 @@ const styles = StyleSheet.create({
     textAddress:{
         fontSize:20,
         fontWeight:400
+    },
+    buttonContainer:{
+        width:'100%',
+        flexDirection:'row'
+    },
+    button:{
+        color:Colors.customButtonColor,
+        backgroundColor:"grey",
+        borderWidth:2,
+        borderColor:"white"
     }
 });
