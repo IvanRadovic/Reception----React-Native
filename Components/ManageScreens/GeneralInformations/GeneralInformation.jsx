@@ -41,7 +41,7 @@ const GeneralInformation = () => {
 
     /* --- Handle submit --- */
     const handleSubmit = () => {
-        navigation.navigate('Details', );
+        navigation.navigate('Details', {info} );
     }
     
     return ( 
