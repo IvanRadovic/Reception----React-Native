@@ -7,7 +7,7 @@ const Details = ({ route, navigation }) => {
     const { info } = route.params;
 
     const handleDetails = () => {
-      // navigation.navigate('Calendar')
+      navigation.navigate('Calendar')
     }
 
       return (
@@ -29,6 +29,9 @@ const Details = ({ route, navigation }) => {
                         </View>
                         <View style={styles.infoPriceContainer}>
                           <Text style={styles.infoPrice}><Ionicons name="cash-outline" size={16} style={styles.iconStyle} /> {hotel.base_price.slice(0, -2)} $</Text>
+                        </View>
+                        <View style={styles.containerDates}>
+                            <Text style={styles.textDates}>Check dates <Ionicons name="calendar-outline" size={16} style={styles.iconStyle} /></Text>
                         </View>
                     </View>
                 </Pressable>
@@ -65,7 +68,7 @@ const Details = ({ route, navigation }) => {
       },
       img:{
         width:130,
-        height:100
+        height:130
       },
       infoDetails:{
           width:'50%'
@@ -97,6 +100,13 @@ const Details = ({ route, navigation }) => {
       infoPrice:{
         fontSize:18,
         marginHorizontal:8,
+      },
+      containerDates: {
+        width:'100%',
+        marginTop:10,
+      },
+      textDates:{
+        textAlign:'center'
       }
     });
     

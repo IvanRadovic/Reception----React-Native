@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/core";
 import DropdownComponent from "../Components/UI/Dropdown";
 import UserSelectButton from "../Components/UI/UserSelecetButton";
 import { StatusBar } from "expo-status-bar";
+import BigCalendar from "./Calendar";
 
 const UserSelect = ({ navigation}) => {
 

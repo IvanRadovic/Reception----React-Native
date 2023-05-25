@@ -12,6 +12,7 @@ import UserSelect from './Screens/UserSelect';
 import BackButton from './Components/UI/BackButton';
 import Colors from './Constants/Colors';
 import Details from './Screens/Details';
+import Calendar from './Screens/Calendar';
 
 const Stack = createStackNavigator();
 
@@ -81,12 +82,12 @@ export default function App() {
             />
             <Stack.Screen 
               name="Calendar" 
-              component={Details}
+              component={Calendar}
               options={({ navigation }) => ({
                 title:'Check calendar',
                 headerBackTitle: '',
                 headerLeft: () => (
-                  <BackButton iconName="close" onPress={() => navigation.navigate("SmallHotels")} />
+                  <BackButton iconName="close" onPress={() => navigation.navigate("PrivateApartments")} />
                 ),
               })}  
             />
