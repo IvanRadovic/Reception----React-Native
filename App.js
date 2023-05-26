@@ -96,7 +96,7 @@ export default function App() {
               name="Hours" 
               component={Hours}
               options={({ navigation }) => ({
-                title:'Check chec-ins',
+                title:'Check-ins',
                 headerBackTitle: '',
                 headerLeft: () => (
                   <BackButton iconName="close" onPress={() => navigation.navigate("Calendar")} />
