@@ -13,6 +13,7 @@ import BackButton from './Components/UI/BackButton';
 import Colors from './Constants/Colors';
 import Details from './Screens/Details';
 import Calendar from './Screens/Calendar';
+import Hours from './Screens/Hours';
 
 const Stack = createStackNavigator();
 
@@ -88,6 +89,17 @@ export default function App() {
                 headerBackTitle: '',
                 headerLeft: () => (
                   <BackButton iconName="close" onPress={() => navigation.navigate("PrivateApartments")} />
+                ),
+              })}  
+            />
+            <Stack.Screen 
+              name="Hours" 
+              component={Hours}
+              options={({ navigation }) => ({
+                title:'Check chec-ins',
+                headerBackTitle: '',
+                headerLeft: () => (
+                  <BackButton iconName="close" onPress={() => navigation.navigate("Calendar")} />
                 ),
               })}  
             />
